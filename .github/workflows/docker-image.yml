@@ -37,14 +37,15 @@ jobs:
         # echo "Iniciando login"
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         # echo "Fin del login"
+        echo "New Version: $NEW_VERSION"
         
-    - name: Build docker image
-      run: |
-        docker build -t carlos1997/docker-graphql:$NEW_VERSION .
-        docker build -t carlos1997/docker-graphql:latest .
+    # - name: Build docker image
+    #   run: |
+    #     docker build -t carlos1997/docker-graphql:$NEW_VERSION .
+    #     docker build -t carlos1997/docker-graphql:latest .
 
-    - name: Push docker image
-      run: |
-        docker push carlos1997/docker-graphql:$NEW_VERSION
-        docker push carlos1997/docker-graphql:latest
+    # - name: Push docker image
+    #   run: |
+    #     docker push carlos1997/docker-graphql:$NEW_VERSION
+    #     docker push carlos1997/docker-graphql:latest
     
